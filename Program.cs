@@ -150,6 +150,7 @@ namespace SerializerTests
                 new DataContract<BookShelf>(Data, Touch),
                 new XmlSerializer<BookShelf>(Data, Touch),
                 new JsonNet<BookShelf>(Data, Touch),
+                new JsonNetBSON<BookShelf>(Data, Touch),
                 new MsgPack_Cli<BookShelf>(Data, Touch),
                 new BinaryFormatter<BookShelf>(Data, Touch),
             };
@@ -248,6 +249,11 @@ namespace SerializerTests
                 new JsonNet<BookShelf2>(Data2, null),
                 new JsonNet<LargeBookShelf>(DataLarge, null),
 
+                new JsonNetBSON<BookShelf>(Data, null),
+                new JsonNetBSON<BookShelf1>(Data1, null),
+                new JsonNetBSON<BookShelf2>(Data2, null),
+                new JsonNetBSON<LargeBookShelf>(DataLarge, null),
+
                 new Protobuf_net<BookShelf>(Data, null),
                 new Protobuf_net<BookShelf1>(Data1, null),
                 new Protobuf_net<BookShelf2>(Data2, null),
@@ -300,6 +306,7 @@ namespace SerializerTests
                 new DataContract<ReferenceBookShelf>(DataReferenceBookShelf, null, refTracking:TestReferenceTracking),
                 // new XmlSerializer<ReferenceBookShelf>(DataReferenceBookShelf, null),  // XmlSerializer does not support Dictionaries https://stackoverflow.com/questions/2911514/why-doesnt-xmlserializer-support-dictionary
                 new JsonNet<ReferenceBookShelf>(DataReferenceBookShelf, null, refTracking:TestReferenceTracking),
+                new JsonNetBSON<ReferenceBookShelf>(DataReferenceBookShelf, null, refTracking:TestReferenceTracking),
                 new MsgPack_Cli<ReferenceBookShelf>(DataReferenceBookShelf, null),
                 new BinaryFormatter<ReferenceBookShelf>(DataReferenceBookShelf, null),
 				new Utf8JsonSerializer<ReferenceBookShelf>(DataReferenceBookShelf, null)

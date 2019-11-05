@@ -42,3 +42,6 @@ please drop me a note and I will include it.
 
 These are either no longer compatible with .NET Core 3 or were superseded by newer ones. Were possible
 I have commented out only the serializer invocations in Program.cs so you can add them again if you are curious. 
+
+#### Running the tests
+After building the solution, open cmd window as Administrator (required by ngen) and from the bin\debug\net472 directory run `RunTests.cmd`
